@@ -2,20 +2,8 @@ import { experimental_extendTheme as extendTheme } from '@mui/material/styles'
 
 // Create a theme instance.
 
-const APP_BAR_HEIGHT = '58px'
-const BOARD_BAR_HEIGHT = '60px'
-const BOARD_CONTENT_HEIGHT = `calc(100vh - ${APP_BAR_HEIGHT} - ${BOARD_BAR_HEIGHT})`
-const COLLUM_HEADER_HEIGHT = '50px'
-const COLLUM_FOOTER_HEIGHT = '50px'
 
 const theme = extendTheme({
-  trello:{
-    appBarHeight: APP_BAR_HEIGHT,
-    appHeaderHeight: BOARD_BAR_HEIGHT,
-    boardContentHeight: BOARD_CONTENT_HEIGHT,
-    collum_footer_height: COLLUM_FOOTER_HEIGHT,
-    collum_header_height: COLLUM_HEADER_HEIGHT
-  },
   colorSchemes: {
     light: {
       palette: {
@@ -38,66 +26,7 @@ const theme = extendTheme({
       }
     }
   },
-  components: {
-    MuiCssBaseline:{
-      styleOverrides: {
-        body: {
-          '*::-webkit-scrollbar':{
-            width: '4px',
-            height: '4px'
-          },
-          '*::-webkit-scrollbar-thumb':{
-            backgroundColor: '#666',
-            borderRadius: '2px'
-          },
-          '*::-webkit-scrollbar-thumb:hover':{
-            backgroundColor: '#888'
-          }
-        }
-      }
-    },
-    MuiButton: {
-      styleOverrides: {
-        root:{
-          textTransform: 'none'
-        }
-      }
-    },
-
-    MuiTypography: {
-      styleOverrides: {
-        root:{
-          '&.MuiTypography-body1': {
-            fontSize: '0.875rem'
-          }
-        }
-      }
-    },
-
-    MuiInputLabel: {
-      styleOverrides: {
-        root:{
-          fontSize: '0.875rem'
-        }
-      }
-    },
-
-    MuiOutlinedInput: {
-      styleOverrides: {
-        root: ({ theme }) => {
-          return {
-            color: theme.palette.primary.main,
-            fontSize: '0.875rem',
-            '&:hover': {
-              '.MuiOutlinedInput-notchedOutline': {
-                borderColor: theme.palette.primary.main
-              }
-            }
-          }
-        }
-      }
-    }
-  }
+  
   // ...other properties
 })
 
